@@ -67,7 +67,7 @@ body {
     background-attachment: fixed;
 }
 
-@keyframes gradient {
+/* @keyframes gradient {
     0% {
         background-position: 0% 0%;
     }
@@ -127,4 +127,4 @@ body {
     100% {
         transform: translateX(1);
     }
-}
+} */
