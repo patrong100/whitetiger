@@ -1,121 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>White Tiger Gaming</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+      color: #222;
+      text-align: center;
+    }
 
-    <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .header {
+      padding: 40px 20px;
+      background: linear-gradient(to right, #ffffff, #e8f3ff);
+      color: #222;
+      border-bottom: 2px solid #ccc;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      font-size: 2.7rem;
+      font-weight: 800;
+      color: #0077cc;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo span {
+      margin-left: 10px;
+      font-size: 1.2rem;
+      font-weight: normal;
+      color: #333;
+    }
+
+    .games {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px 15px;
+    }
+
+    .button {
+      background: linear-gradient(to right, #ffffff, #e0f0ff);
+      border: 2px solid #0077cc;
+      border-radius: 25px;
+      padding: 15px 30px;
+      margin: 10px 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #0077cc;
+      cursor: pointer;
+      width: 80%;
+      max-width: 320px;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background: #0077cc;
+      color: #fff;
+      box-shadow: 0 0 12px rgba(0, 119, 204, 0.4);
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: #ccc;
+      margin: 40px auto;
+      width: 60%;
+    }
+
+    .contact-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #0077cc;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: background 0.3s ease;
+      z-index: 1000;
+    }
+
+    .contact-float:hover {
+      background-color: #005fa3;
+    }
+
+    .contact-modal {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 320px;
+      background: white;
+      border: 2px solid #0077cc;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      z-index: 1001;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .contact-modal input,
+    .contact-modal textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 0.95rem;
+    }
+
+    .contact-modal textarea {
+      resize: vertical;
+    }
+
+    .close-btn {
+      float: right;
+      cursor: pointer;
+      font-weight: bold;
+      color: #888;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    #thank-you {
+      color: green;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
 </head>
-
 <body>
-    <div class="header games">
-        <h1>Welcome to White Tiger!</h1>
 
+  <div class="header">
+    <div class="logo">
+      🐯 White Tiger Gaming <span>— Play & Win Big!</span>
     </div>
-    <div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-    </div>
-    <div class="games">
-        <form action="http://download.gamevault999.com">
-            <button class="button" type="submit">GAMEVAULT</button>
-        </form>
+  </div>
 
-        <br>
+  <div class="games">
+    <form action="http://download.gamevault999.com"><button class="button">🎮 GameVault</button></form>
+    <form action="http://m.lasvegassweeps.com"><button class="button">🎰 Vegas Sweeps</button></form>
+    <form action="http://dl.highstakesweeps.com"><button class="button">💰 Highstake Sweeps</button></form>
+    <form action="https://dl.juwa777.com"><button class="button">🔥 Juwa</button></form>
+    <form action="https://pandamaster.vip:8888/index.html"><button class="button">🐼 PandaMaster</button></form>
+    <form action="http://risingstar.vip:8580/index.html"><button class="button">🌟 Rising Star</button></form>
+    <form action="http://start.firekirin.xyz:8580/index.html"><button class="button">🐉 Fire Kirin</button></form>
+    <form action="http://start.orionstars.vip:8580/index.html"><button class="button">🌌 OrionStars</button></form>
+    <form action="https://milkywayapp.xyz"><button class="button">🚀 MilkyWay</button></form>
+    <form action="http://www.vblink777.club"><button class="button">🎰 VBlink</button></form>
+    <form action="http://www.ultrapanda.mobi/"><button class="button">🐼 UltraPanda</button></form>
+    <form action="https://bet777.eu/play/?"><button class="button">💵 RiverSweeps</button></form>
+    <form action="https://m.gamesirius999.com"><button class="button">🌠 Sirius</button></form>
+    <form action="http://www.cashmachine777.com"><button class="button">💸 CashMachine</button></form>
 
-        <form action="http://m.lasvegassweeps.com">
-            <button class="button" type="submit">VEGAS SWEEPS</button>
-        </form>
+    <hr>
 
-        <br>
+    <form action="https://sallapay.pro/383/purchase">
+      <button class="button">💳 Deposit Now</button>
+    </form>
+  </div>
 
-        <form action="http://dl.highstakesweeps.com">
-            <button class="button" type="submit">HIGHSTAKESWEEPS</button>
-        </form>
+  <!-- Floating Contact Button -->
+  <div class="contact-float" onclick="toggleContact()">💬 Help / Contact Us</div>
 
-        <br>
+  <!-- Contact Modal -->
+  <div class="contact-modal" id="contactModal">
+    <div class="close-btn" onclick="toggleContact()">✖</div>
+    <h3 style="margin-top: 0;">Contact Us</h3>
+    <form id="contact-form" action="https://formsubmit.co/setobagh17@gmail.com" method="POST" onsubmit="submitContact(event)">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button class="button" type="submit" style="width: 100%;">📨 Send</button>
+    </form>
+    <p id="thank-you" style="display:none;">✅ Thank you! We'll get back to you soon.</p>
+  </div>
 
-        <form action="https://dl.juwa777.com">
-            <button class="button" type="submit">JUWA</button>
-        </form>
+  <script>
+    function toggleContact() {
+      const modal = document.getElementById("contactModal");
+      modal.style.display = modal.style.display === "block" ? "none" : "block";
+    }
 
-        <br>
+    function submitContact(event) {
+      event.preventDefault();
+      const form = document.getElementById("contact-form");
+      const thankYou = document.getElementById("thank-you");
 
-        <form action="https://pandamaster.vip:8888/index.html">
-            <button class="button" type="submit">PANDAMASTER</button>
-        </form>
-
-        <br>
-
-        <form action="http://risingstar.vip:8580/index.html">
-            <button class="button" type="submit">RISING STAR</button>
-        </form>
-
-        <br>
-
-        <br>
-
-        <form action="http://start.firekirin.xyz:8580/index.html">
-            <button class="button" type="submit">FIRE KIRIN</button>
-        </form>
-
-        <br>
-
-        <form action="http://start.orionstars.vip:8580/index.html">
-            <button class="button" type="submit">ORIONSTARS</button>
-        </form>
-
-        <br>
-
-        <form action="https://milkywayapp.xyz">
-            <button class="button" type="submit">MILKYWAY</button>
-        </form>
-
-        <br>
-
-        <form action="http://www.vblink777.club">
-            <button class="button" type="submit">VBLINK</button>
-        </form>
-
-        <br>
-
-        <form action="http://www.ultrapanda.mobi/">
-            <button class="button" type="submit">ULTRAPANDA</button>
-        </form>
-
-        <br>
-
-        <form action="https://bet777.eu/play/?">
-            <button class="button" type="submit">RIVERSWEEPS</button>
-        </form>
-        
-        <br>
-        
-         <form action="https://m.gamesirius999.com">
-            <button class="button" type="submit">SIRIUS</button>
-        </form>
-
-        <br>
-
-        <form action="http://www.cashmachine777.com">
-            <button class="button" type="submit">CASHMACHINE</button>
-        </form>
-
-        <br>
-        <hr>
-         <form action="https://sallapay.pro/383/purchase">
-            <button class="button" type="submit">Deposit Now!</button>
-        </form>
-        <br>
-        <button class="button games contact" onclick="window.location.href = 'contact.html';">Contact Us</button>
-
-    </div>
-    <br>
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          form.reset();
+          form.style.display = 'none';
+          thankYou.style.display = 'block';
+        } else {
+          thankYou.innerText = '❌ Something went wrong.';
+          thankYou.style.display = 'block';
+        }
+      }).catch(() => {
+        thankYou.innerText = '❌ Failed to send message.';
+        thankYou.style.display = 'block';
+      });
+    }
+  </script>
 
 </body>
-
 </html>
