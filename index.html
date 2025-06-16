@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,6 +12,7 @@
     * {
       box-sizing: border-box;
     }
+
     body {
       margin: 0;
       padding: 0;
@@ -27,6 +29,7 @@
       font-weight: 600;
       transition: color 0.3s ease;
     }
+
     a:hover,
     a:focus {
       color: #d4af37;
@@ -38,7 +41,7 @@
       padding: 40px 20px;
       background: linear-gradient(to right, #12151c, #222a41);
       border-bottom: 3px solid #d4af37;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.7);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
       user-select: none;
       display: flex;
       justify-content: center;
@@ -46,6 +49,7 @@
       flex-wrap: wrap;
       gap: 12px;
     }
+
     .logo {
       font-family: 'Playfair Display', serif;
       font-size: 2.9rem;
@@ -58,6 +62,7 @@
       flex-wrap: nowrap;
       white-space: nowrap;
     }
+
     .logo span {
       font-size: 1.25rem;
       font-weight: 400;
@@ -92,6 +97,7 @@
       flex: 1 1 240px;
       min-width: 220px;
     }
+
     .button {
       background: linear-gradient(145deg, #2a3146, #1b1f2d);
       border: 2px solid #d4af37;
@@ -108,9 +114,10 @@
         color 0.3s ease,
         box-shadow 0.3s ease,
         border-color 0.3s ease;
-      text-shadow: 0 0 8px rgba(212,175,55,0.5);
+      text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
       user-select: none;
     }
+
     .button:hover,
     .button:focus {
       background: #d4af37;
@@ -147,6 +154,7 @@
       line-height: 1.5;
       user-select: text;
     }
+
     .freeplay h3 {
       margin-top: 0;
       font-family: 'Playfair Display', serif;
@@ -155,6 +163,7 @@
       color: #d4af37;
       margin-bottom: 12px;
     }
+
     .freeplay p a {
       color: #f3e08c;
     }
@@ -184,6 +193,7 @@
       user-select: none;
       transition: background-color 0.3s ease;
     }
+
     .contact-float:hover,
     .contact-float:focus {
       background-color: #f8e463;
@@ -208,11 +218,13 @@
       font-size: 1rem;
       user-select: text;
     }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -236,6 +248,7 @@
       user-select: none;
       transition: color 0.3s ease;
     }
+
     .close-btn:hover,
     .close-btn:focus {
       color: #fff;
@@ -256,6 +269,7 @@
       resize: vertical;
       transition: background-color 0.3s ease;
     }
+
     .contact-modal input:focus,
     .contact-modal textarea:focus {
       outline: none;
@@ -276,6 +290,7 @@
       transition: background-color 0.3s ease;
       user-select: none;
     }
+
     .contact-modal button:hover,
     .contact-modal button:focus {
       background-color: #f8e463;
@@ -295,18 +310,22 @@
       .games {
         gap: 14px;
       }
+
       form {
         flex-basis: 100%;
       }
+
       .button {
         font-size: 1rem;
         padding: 14px 22px;
       }
+
       .contact-modal {
         width: 90vw;
         bottom: 70px;
         right: 5%;
       }
+
       .action-buttons {
         flex-direction: column;
         gap: 20px;
@@ -314,12 +333,13 @@
     }
   </style>
 </head>
+
 <body>
 
   <header class="header" role="banner">
     <div class="logo" aria-label="White Tiger Gaming logo">
       🐯 White Tiger Gaming
-      <h2>— Play & Win Big!</h2>
+      <span style="display: block;">— Play & Win Big!</span>
     </div>
   </header>
 
@@ -415,7 +435,6 @@
       const section = document.getElementById("freeplay-section");
       section.style.display = section.style.display === "block" ? "none" : "block";
     }
-
     document.getElementById('contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
       const form = e.target;
@@ -423,12 +442,13 @@
       thankYou.style.display = 'none';
       thankYou.className = '';
       thankYou.textContent = '';
-
       const formData = new FormData(form);
       fetch(form.action, {
         method: "POST",
         body: formData,
-        headers: { 'Accept': 'application/json' }
+        headers: {
+          'Accept': 'application/json'
+        }
       }).then(response => {
         if (response.ok) {
           thankYou.textContent = "✅ Thank you! We'll get back to you soon.";
@@ -448,4 +468,5 @@
     });
   </script>
 </body>
+
 </html>
