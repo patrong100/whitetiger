@@ -180,8 +180,21 @@
     <form action="https://sallapay.pro/383/purchase">
       <button class="button">💳 Deposit Now</button>
     </form>
+    <button class="button" type="button" onclick="toggleFreeplay()">🎁 Earn Freeplay</button>
+    <div id="freeplay-section">
+      <p>Please report the following Facebook accounts and send us a screenshot to claim your freeplay:</p>
+<!--       <p><a href="https://www.facebook.com/patrongaming55" target="_blank">📌 Fake Patron Gaming Page</a></p> -->
+      <p><a href="https://www.facebook.com/sakuragamestationn/" target="_blank">⚠️ Malicious Actor</a></p>
+    </div>
   </div>
 
+  
+    <script>
+    function toggleFreeplay() {
+      const section = document.getElementById('freeplay-section');
+      section.style.display = (section.style.display === 'none' || section.style.display === '') ? 'block' : 'none';
+    }
+  </script>
   <!-- Floating Contact Button -->
   <div class="contact-float" onclick="toggleContact()">💬 Help / Contact Us</div>
 
