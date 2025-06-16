@@ -16,13 +16,13 @@
 
     a {
       text-decoration: none;
-      color: inherit;
+      color: #0077cc;
+      font-weight: bold;
     }
 
     .header {
       padding: 40px 20px;
       background: linear-gradient(to right, #ffffff, #e8f3ff);
-      color: #222;
       border-bottom: 2px solid #ccc;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
@@ -71,12 +71,23 @@
       box-shadow: 0 0 12px rgba(0, 119, 204, 0.4);
     }
 
-    hr {
-      border: none;
-      height: 1px;
-      background: #ccc;
-      margin: 40px auto;
-      width: 60%;
+    .freeplay-toggle {
+      margin-top: 20px;
+    }
+
+    .freeplay {
+      background: #fff;
+      padding: 25px;
+      margin: 20px auto;
+      border-radius: 12px;
+      max-width: 700px;
+      border: 1px solid #ccc;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+      display: none;
+    }
+
+    .freeplay h3 {
+      color: #0077cc;
     }
 
     .contact-float {
@@ -91,7 +102,6 @@
       font-weight: bold;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       cursor: pointer;
-      transition: background 0.3s ease;
       z-index: 1000;
     }
 
@@ -149,6 +159,12 @@
       font-weight: bold;
       margin-top: 15px;
     }
+
+    hr.separator {
+      margin: 40px auto;
+      width: 60%;
+      border: 1px solid #ccc;
+    }
   </style>
 </head>
 <body>
@@ -175,26 +191,29 @@
     <form action="https://m.gamesirius999.com"><button class="button">🌠 Sirius</button></form>
     <form action="http://www.cashmachine777.com"><button class="button">💸 CashMachine</button></form>
 
-    <hr>
+    <!-- Separator -->
+    <hr class="separator">
 
+    <!-- Deposit -->
     <form action="https://sallapay.pro/383/purchase">
       <button class="button">💳 Deposit Now</button>
     </form>
-    <button class="button" type="button" onclick="toggleFreeplay()">🎁 Earn Freeplay</button>
-    <div id="freeplay-section">
-      <p>Please report the following Facebook accounts and send us a screenshot to claim your freeplay:</p>
-<!--       <p><a href="https://www.facebook.com/patrongaming55" target="_blank">📌 Fake Patron Gaming Page</a></p> -->
-      <p><a href="https://www.facebook.com/sakuragamestationn/" target="_blank">⚠️ Malicious Actor</a></p>
+
+    <!-- Freeplay Toggle -->
+    <div class="freeplay-toggle">
+      <button class="button" onclick="toggleFreeplay()">🎁 Claim Freeplay</button>
+    </div>
+
+    <!-- Freeplay Section -->
+    <div id="freeplay-section" class="freeplay">
+      <h3>Report Fake Facebook Pages</h3>
+      <p>Please report the following pages and send us a screenshot to claim your freeplay:</p>
+<!--       <p><a href="https://www.facebook.com/patrongaming55" target="_blank">🔗 Fake Patron Gaming Page</a></p> -->
+      <p><a href="https://www.facebook.com/sakuragamestationn/" target="_blank">🔗 Malicious Actor</a></p>
+<!--       <p>After reporting, contact us via the Help button to claim your reward.</p> -->
     </div>
   </div>
 
-  
-    <script>
-    function toggleFreeplay() {
-      const section = document.getElementById('freeplay-section');
-      section.style.display = (section.style.display === 'none' || section.style.display === '') ? 'block' : 'none';
-    }
-  </script>
   <!-- Floating Contact Button -->
   <div class="contact-float" onclick="toggleContact()">💬 Help / Contact Us</div>
 
@@ -241,6 +260,11 @@
         thankYou.innerText = '❌ Failed to send message.';
         thankYou.style.display = 'block';
       });
+    }
+
+    function toggleFreeplay() {
+      const section = document.getElementById("freeplay-section");
+      section.style.display = section.style.display === "block" ? "none" : "block";
     }
   </script>
 
