@@ -331,6 +331,47 @@
         gap: 20px;
       }
     }
+
+    /* ...existing code... */
+.header .logo span {
+  font-size: 1em; /* default size for desktop */
+}
+
+@media (max-width: 600px) {
+  .header .logo span {
+    display: block;
+    font-size: 0.8em; /* smaller font on mobile */
+    margin-top: 4px;
+  }
+}
+/* ...existing code... */
+    .header .logo {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header .logo span {
+      font-size: 1.2rem; /* slightly larger on mobile */
+      margin-top: 4px;
+    }
+    @media (max-width: 600px) {
+      .header {
+        padding: 20px 10px;
+      }
+
+      .logo {
+        font-size: 2.2rem;
+      }
+
+      .button {
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
+
+      .freeplay h3 {
+        font-size: 1.5rem;
+      }
+    }
   </style>
 </head>
 
