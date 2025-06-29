@@ -307,6 +307,10 @@
       text-align: center;
     }
 
+    .footer-spacer {
+      height: 120px;
+    }
+
     /* Responsive tweaks */
     @media (max-width: 480px) {
       .games {
@@ -332,7 +336,11 @@
         flex-direction: column;
         gap: 20px;
       }
-    }
+
+      .footer-spacer {
+        height: 160px;
+        /* Extra space for stacked or larger buttons on small screens */
+      }
   </style>
 </head>
 
@@ -341,32 +349,34 @@
   <header class="header" role="banner">
     <div class="logo" aria-label="White Tiger Gaming logo">
       🐯 Welcome to White Tiger!🐯
-            <span style="display: inline;">— Play & Win Big!</span>
+      <span style="display: inline;">— Play & Win Big!</span>
     </div>
   </header>
-  
-  <section>
-      <div class="action-buttons">
-    <a href="https://signal.me/#eu/oqr5iOWmaM_3sD_msDdkFsv50fRccpQSNrqpRfd1wU6YvjyIBHxN0ba6QG0TFBB9" target="_blank" rel="noopener" class="button">📨 Our Facebook is currently DOWN🔻. Please be aware of imposters and scammers. Connect to us via 📨Signal Here. Thank You! 📨 </a>
-  </div>
-      </section>
-  
-  <section class="action-buttons" aria-label="Deposit and freeplay actions">
-      <form action="https://sallapay.pro/383/purchase" method="get" target="_blank" rel="noopener" aria-label="Deposit now">
-        <button class="button" type="submit">💳 Deposit Now</button>
-      </form>
-      
-      <div class="freeplay-toggle" aria-label="Claim freeplay toggle button">
-        <button class="button" type="button" onclick="toggleFreeplay()">🎁 Claim Freeplay</button>
-      </div>
-    </section>
 
-    <section id="freeplay-section" class="freeplay" aria-live="polite" aria-hidden="true" tabindex="-1">
-      <h3>Report Fake Facebook Pages</h3>
-      <p>Please report the following pages and send us a screenshot to claim your freeplay:</p>
-<!--       <p><a href="https://www.facebook.com/patrongaming55" target="_blank">📌 Fake Patron Gaming Page</a></p> -->
-      <p><a href="https://www.facebook.com/sakuragamestationn/" target="_blank">⚠️ Malicious Actor</a></p>
-    </section>
+  <section>
+    <div class="action-buttons">
+      <a href="https://signal.me/#eu/oqr5iOWmaM_3sD_msDdkFsv50fRccpQSNrqpRfd1wU6YvjyIBHxN0ba6QG0TFBB9" target="_blank" rel="noopener" class="button" style="font-size: 1.2rem; border: 3px solid #4aa1f3; background-color: #1f2937; text-shadow: none;">
+        📶 Click to Connect via Signal
+      </a>
+    </div>
+  </section>
+
+  <section class="action-buttons" aria-label="Deposit and freeplay actions">
+    <form action="https://sallapay.pro/383/purchase" method="get" target="_blank" rel="noopener" aria-label="Deposit now">
+      <button class="button" type="submit">💳 Deposit Now</button>
+    </form>
+
+    <div class="freeplay-toggle" aria-label="Claim freeplay toggle button">
+      <button class="button" type="button" onclick="toggleFreeplay()">🎁 Claim Freeplay</button>
+    </div>
+  </section>
+
+  <section id="freeplay-section" class="freeplay" aria-live="polite" aria-hidden="true" tabindex="-1">
+    <h3>Report Fake Facebook Pages</h3>
+    <p>Please report the following pages and send us a screenshot to claim your freeplay:</p>
+    <!--       <p><a href="https://www.facebook.com/patrongaming55" target="_blank">📌 Fake Patron Gaming Page</a></p> -->
+    <p><a href="https://www.facebook.com/sakuragamestationn/" target="_blank">⚠️ Malicious Actor</a></p>
+  </section>
 
   <main role="main" aria-label="Game selection and deposit options">
     <section class="games" aria-label="Game download links">
@@ -416,30 +426,164 @@
 
     <hr class="separator" aria-hidden="true" />
 
-     <section>
+    <!--      <section>
       <div class="action-buttons">
     <a href="https://t.me/whitetiger320" target="_blank" rel="noopener" class="button">📨 Facebook is currently Down. Please check your Email (including Spam/Junk) & Join Us on Telegram 📨 </a>
   </div>
-      </section>
-    
-    
+      </section> -->
+
   </main>
 
+  <!-- Existing Help/Contact Manager Button -->
   <button class="contact-float" aria-haspopup="dialog" aria-expanded="false" aria-controls="contactModal" onclick="toggleContact()" type="button">
     💬 Help / Contact Manager
   </button>
 
+  <!-- Contact Agent Button -->
+  <button class="contact-float" style="bottom: 90px; background-color: #2e8b57;" onclick="toggleAgent()">
+    🧑‍💼 Contact Agent
+  </button>
+
+  <!-- Manager Contact Modal -->
   <div class="contact-modal" id="contactModal">
     <div class="close-btn" onclick="toggleContact()">✖</div>
-    <h3 style="margin-top: 0;">Contact Us</h3>
+    <h3 style="margin-top: 0;">Contact Manager</h3>
     <form id="contact-form" action="https://hook.us2.make.com/m24rktaef0x74rrd3hhpav2911nbymdo" method="POST">
       <input type="hidden" name="_captcha" value="false">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-      <button class="button" type="submit" style="width: 100%;">📨 Send</button>
+      <button class="button" type="submit">📨 Send</button>
     </form>
     <p id="thank-you"></p>
+  </div>
+
+  <!-- Contact Agent Modal -->
+  <div class="contact-modal" id="agentModal">
+    <div class="close-btn" onclick="toggleAgent()">✖</div>
+    <h3 style="margin-top: 0;">Contact Agent</h3>
+    <form id="agent-form" action="https://formsubmit.co/whitetigerreal2@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="text" name="username" placeholder="Your Username" required>
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button class="button" type="submit">📨 Send</button>
+    </form>
+
+    <p id="agent-thank-you"></p>
+  </div>
+
+  <!-- Social Buttons -->
+  <section class="action-buttons">
+    <a class="button" href="#" onclick="notifyLink('https://facebook.com/yourpage')" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width: 20px; height: 20px;">
+      Connect via Facebook (Coming Soon)
+    </a>
+
+    <a class="button" href="https://wa.me/qr/6MJ6VUUILNUEM1" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 20px; height: 20px;">
+      Chat on WhatsApp
+    </a>
+
+    <a class="button" href="https://t.me/whitetiger320" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" style="width: 20px; height: 20px;">
+      Join us on Telegram
+    </a>
+
+    <a class="button" href="https://signal.me/#eu/oqr5iOWmaM_3sD_msDdkFsv50fRccpQSNrqpRfd1wU6YvjyIBHxN0ba6QG0TFBB9" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Signal-Logo.svg" alt="Signal" style="width: 20px; height: 20px; border-radius: 4px;">
+      Message via Signal
+    </a>
+
+  </section>
+  <section class="action-buttons" style="margin-top: 20px;">
+    <button onclick="toggleReport()" style="
+    background-color: transparent;
+    color: #aaa;
+    border: 1px solid #444;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;">
+      Report This Page
+    </button>
+  </section>
+
+  <!-- Footer + Report Page -->
+  <footer style="margin-top: 40px; padding: 20px; background: #111820; color: #aaa; text-align: center; font-size: 0.9rem;">
+    <p>&copy; 2025 White Tiger Gaming. All rights reserved.</p>
+  </footer>
+
+  <div class="contact-modal" id="reportModal" style="
+  background: #1a1a1a;
+  border: 1px solid #444;
+  box-shadow: none;
+  color: #ddd;
+  font-size: 0.95rem;
+">
+    <div class="close-btn" onclick="toggleReport()">✖</div>
+    <h3 style="margin-top: 0; font-size: 1.2rem; color: #ccc; font-weight: 600;">Report this Page</h3>
+    <form id="report-form" action="https://formsubmit.co/whitetigergaming365@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="legalname" placeholder="Legal Name" required style="
+      background-color: #2b2b2b;
+      color: #eee;
+      border: 1px solid #555;
+      font-size: 0.95rem;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 12px;
+      width: 100%;
+    ">
+      <input type="text" name="phone" placeholder="Phone Number" required style="
+      background-color: #2b2b2b;
+      color: #eee;
+      border: 1px solid #555;
+      font-size: 0.95rem;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 12px;
+      width: 100%;
+    ">
+      <input type="email" name="email" placeholder="Email Address" required style="
+      background-color: #2b2b2b;
+      color: #eee;
+      border: 1px solid #555;
+      font-size: 0.95rem;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 12px;
+      width: 100%;
+    ">
+      <textarea name="reason" rows="3" placeholder="Reason for reporting" required style="
+      background-color: #2b2b2b;
+      color: #eee;
+      border: 1px solid #555;
+      font-size: 0.95rem;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 14px;
+      width: 100%;
+      resize: vertical;
+    "></textarea>
+      <button type="submit" style="
+      background-color: #444;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      width: 100%;
+    ">
+        Submit Report
+      </button>
+    </form>
+    <p id="report-thank-you" style="display: none; margin-top: 14px;"></p>
   </div>
 
   <script>
@@ -452,37 +596,48 @@
       const section = document.getElementById("freeplay-section");
       section.style.display = section.style.display === "block" ? "none" : "block";
     }
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const thankYou = document.getElementById('thank-you');
-      thankYou.style.display = 'none';
-      thankYou.className = '';
-      thankYou.textContent = '';
-      const formData = new FormData(form);
-      fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          thankYou.textContent = "✅ Thank you! We'll get back to you soon.";
-          thankYou.className = "success";
-          thankYou.style.display = "block";
+
+    function toggleAgent() {
+      const modal = document.getElementById("agentModal");
+      modal.style.display = modal.style.display === "block" ? "none" : "block";
+    }
+
+    function toggleReport() {
+      const modal = document.getElementById("reportModal");
+      modal.style.display = modal.style.display === "block" ? "none" : "block";
+    }
+
+    function notifyLink(url) {
+      alert("🔗 Redirecting to: " + url);
+      window.open(url, '_blank');
+    }
+
+    function attachFormHandler(formId, msgId, successMsg) {
+      const form = document.getElementById(formId);
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const message = document.getElementById(msgId);
+        message.style.display = "none";
+        const formData = new FormData(form);
+        fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        }).then(response => {
+          message.style.display = "block";
+          message.textContent = response.ok ? successMsg : "❌ Failed to send message.";
           form.reset();
-        } else {
-          thankYou.textContent = "❌ Something went wrong. Please try again.";
-          thankYou.className = "error";
-          thankYou.style.display = "block";
-        }
-      }).catch(() => {
-        thankYou.textContent = "❌ Network error. Please try again.";
-        thankYou.className = "error";
-        thankYou.style.display = "block";
+        }).catch(() => {
+          message.style.display = "block";
+          message.textContent = "❌ Network error. Please try again.";
+        });
       });
-    });
+    }
+    attachFormHandler("contact-form", "thank-you", "✅ Message sent to Manager successfully.");
+    attachFormHandler("agent-form", "agent-thank-you", "✅ Message sent to Agent successfully.");
+    attachFormHandler("report-form", "report-thank-you", "Report Sent.");
   </script>
 </body>
 
