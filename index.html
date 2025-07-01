@@ -1,351 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>White Tiger Gaming</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap');
-
-    /* Reset & base */
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(135deg, #0e1117, #1a1f2a);
-      color: #d8d6c9;
-      text-align: center;
-      min-height: 100vh;
-    }
-
-    a {
-      text-decoration: none;
-      color: #72a0c1;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    a:hover,
-    a:focus {
-      color: #d4af37;
-      outline: none;
-    }
-
-    /* Header */
-    .header {
-      padding: 40px 20px;
-      background: linear-gradient(to right, #12151c, #222a41);
-      border-bottom: 3px solid #d4af37;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
-      user-select: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #d4af37;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: nowrap;
-      white-space: wrap;
-    }
-
-    .logo span {
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: #a99f6b;
-      user-select: text;
-      flex-wrap: wrap;
-      white-space: wrap;
-    }
-
-    /* Games container */
-    .games {
-      max-width: 820px;
-      margin: 40px auto 20px;
-      padding: 0 15px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      justify-content: center;
-    }
-
-    /* Buttons container for Deposit and Freeplay */
-    .action-buttons {
-      max-width: 820px;
-      margin: 40px auto 60px;
-      padding: 0 15px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      justify-content: center;
-    }
-
-    /* Buttons */
-    form {
-      flex: 1 1 240px;
-      min-width: 220px;
-    }
-
-    .button {
-      background: linear-gradient(145deg, #2a3146, #1b1f2d);
-      border: 2px solid #d4af37;
-      border-radius: 30px;
-      padding: 16px 28px;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #d4af37;
-      cursor: pointer;
-      width: 100%;
-      box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
-      transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
-      text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
-      user-select: none;
-    }
-
-    .button:hover,
-    .button:focus {
-      background: #d4af37;
-      color: #121212;
-      border-color: #f8e463;
-      box-shadow:
-        0 0 12px 2px #f8e463,
-        0 4px 14px rgba(255, 255, 160, 0.6);
-      outline: none;
-    }
-
-    /* Freeplay toggle */
-    .freeplay-toggle {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-
-    /* Freeplay panel */
-    .freeplay {
-      background: #222a41;
-      padding: 30px 25px;
-      margin: 25px auto 0;
-      border-radius: 16px;
-      max-width: 700px;
-      border: 2px solid #d4af37;
-      box-shadow:
-        0 6px 20px rgba(212, 175, 55, 0.3),
-        inset 0 0 10px rgba(255, 235, 150, 0.15);
-      display: none;
-      color: #e0d89f;
-      text-align: left;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      user-select: text;
-    }
-
-    .freeplay h3 {
-      margin-top: 0;
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: #d4af37;
-      margin-bottom: 12px;
-    }
-
-    .freeplay p a {
-      color: #f3e08c;
-    }
-
-    /* Separator line */
-    hr.separator {
-      margin: 50px auto;
-      width: 60%;
-      border: 1px solid #444d63;
-      box-shadow: 0 0 6px #3f4660;
-    }
-
-    /* Floating Contact Button */
-    .contact-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #d4af37;
-      color: #121212;
-      padding: 16px 24px;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: 700;
-      box-shadow: 0 6px 18px rgba(212, 175, 55, 0.8);
-      cursor: pointer;
-      z-index: 1000;
-      user-select: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .contact-float:hover,
-    .contact-float:focus {
-      background-color: #f8e463;
-      outline: none;
-    }
-
-    /* Contact Modal */
-    .contact-modal {
-      display: none;
-      position: fixed;
-      bottom: 80px;
-      right: 20px;
-      width: 340px;
-      background: #1c2233;
-      border: 2px solid #d4af37;
-      border-radius: 14px;
-      padding: 22px 24px;
-      box-shadow: 0 14px 28px rgba(212, 175, 55, 0.7);
-      z-index: 1001;
-      animation: fadeIn 0.3s ease forwards;
-      color: #f1e8b8;
-      font-size: 1rem;
-      user-select: text;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .contact-modal h3 {
-      margin-top: 0;
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #d4af37;
-    }
-
-    .close-btn {
-      float: right;
-      cursor: pointer;
-      font-weight: 700;
-      color: #a6933c;
-      font-size: 1.2rem;
-      user-select: none;
-      transition: color 0.3s ease;
-    }
-
-    .close-btn:hover,
-    .close-btn:focus {
-      color: #fff;
-      outline: none;
-    }
-
-    .contact-modal input,
-    .contact-modal textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 14px;
-      border-radius: 8px;
-      border: none;
-      background-color: #2a3146;
-      color: #d8d6c9;
-      font-size: 1rem;
-      font-family: 'Open Sans', sans-serif;
-      resize: vertical;
-      transition: background-color 0.3s ease;
-    }
-
-    .contact-modal input:focus,
-    .contact-modal textarea:focus {
-      outline: none;
-      background-color: #3a4262;
-    }
-
-    .contact-modal button {
-      background: #d4af37;
-      color: #121212;
-      border: none;
-      padding: 14px 0;
-      width: 100%;
-      font-weight: 700;
-      font-size: 1.1rem;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 6px 15px rgba(212, 175, 55, 0.6);
-      transition: background-color 0.3s ease;
-      user-select: none;
-    }
-
-    .contact-modal button:hover,
-    .contact-modal button:focus {
-      background-color: #f8e463;
-      outline: none;
-    }
-
-    #thank-you {
-      color: #9fdf9f;
-      font-weight: 700;
-      margin-top: 18px;
-      display: none;
-      text-align: center;
-    }
-
-    .footer-spacer {
-      height: 120px;
-    }
-
-    /* Responsive tweaks */
-    @media (max-width: 480px) {
-      .games {
-        gap: 14px;
-      }
-
-      form {
-        flex-basis: 100%;
-      }
-
-      .button {
-        font-size: 1rem;
-        padding: 14px 22px;
-      }
-
-      .contact-modal {
-        width: 90vw;
-        bottom: 70px;
-        right: 5%;
-      }
-
-      .action-buttons {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .footer-spacer {
-        height: 160px;
-        /* Extra space for stacked or larger buttons on small screens */
-      }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
   <header class="header" role="banner">
     <div class="logo" aria-label="White Tiger Gaming logo">
       🐯 Welcome to White Tiger!🐯
@@ -355,17 +16,14 @@
 
   <section>
     <div class="action-buttons">
-      <a href="https://signal.me/#eu/oqr5iOWmaM_3sD_msDdkFsv50fRccpQSNrqpRfd1wU6YvjyIBHxN0ba6QG0TFBB9" target="_blank" rel="noopener" class="button" style="font-size: 1.2rem; border: 3px solid #4aa1f3; background-color: #1f2937; text-shadow: none;">
+      <button class="button" style="font-size: 1.2rem; border: 3px solid #4aa1f3; background-color: #1f2937; text-shadow: none;" onclick="openLink('signalTop')">
         📶 Click to Connect via Signal
-      </a>
+      </button>
     </div>
   </section>
 
   <section class="action-buttons" aria-label="Deposit and freeplay actions">
-    <form action="https://sallapay.pro/383/purchase" method="get" target="_blank" rel="noopener" aria-label="Deposit now">
-      <button class="button" type="submit">💳 Deposit Now</button>
-    </form>
-
+    <button class="button" onclick="openLink('deposit')">💳 Deposit Now</button>
     <div class="freeplay-toggle" aria-label="Claim freeplay toggle button">
       <button class="button" type="button" onclick="toggleFreeplay()">🎁 Claim Freeplay</button>
     </div>
@@ -374,75 +32,41 @@
   <section id="freeplay-section" class="freeplay" aria-live="polite" aria-hidden="true" tabindex="-1">
     <h3>Report Fake Facebook Pages</h3>
     <p>Please report the following pages and send us a screenshot to claim your freeplay:</p>
-    <!--       <p><a href="https://www.facebook.com/patrongaming55" target="_blank">📌 Fake Patron Gaming Page</a></p> -->
-    <p><a href="https://www.facebook.com/sakuragamestation5/" target="_blank">⚠️ Malicious Actor</a></p>
+    <p><button class="link-button" onclick="openLink('freeplayLink')">⚠️ Malicious Actor</button></p>
   </section>
 
-  <main role="main" aria-label="Game selection and deposit options">
+  <main role="main" aria-label="Game selection">
     <section class="games" aria-label="Game download links">
-      <form action="http://download.gamevault999.com" method="get" target="_blank" rel="noopener">
-        <button class="button" type="submit">🎮 GameVault</button>
-      </form>
-      <form action="http://m.lasvegassweeps.com" method="get" target="_blank" rel="noopener">
-        <button class="button" type="submit">🎰 Vegas Sweeps</button>
-      </form>
-      <form action="http://dl.highstakesweeps.com" method="get" target="_blank" rel="noopener">
-        <button class="button" type="submit">💰 Highstake Sweeps</button>
-      </form>
-      <form action="https://dl.juwa777.com" method="get" target="_blank" rel="noopener">
-        <button class="button" type="submit">🔥 Juwa</button>
-      </form>
-      <form action="https://pandamaster.vip:8888/index.html" method="get" target="_blank" rel="noopener">
-        <button class="button" type="submit">🐼 PandaMaster</button>
-      </form>
-      <form action="http://risingstar.vip:8580/index.html" method="get" target="_blank" rel="noopener">
-        <button class="button" type="submit">🌟 Rising Star</button>
-      </form>
-      <form action="http://start.firekirin.xyz:8580/index.html" method="get" target="_blank" rel="noopener">
-        <button class="button" type="submit">🐉 Fire Kirin</button>
-      </form>
-      <form action="http://start.orionstars.vip:8580/index.html" method="get" target="_blank" rel="noopener">
-        <button class="button" type="submit">🌌 OrionStars</button>
-      </form>
-      <form action="https://milkywayapp.xyz" method="get" target="_blank" rel="noopener">
-        <button class="button" type="submit">🚀 MilkyWay</button>
-      </form>
-      <form action="http://www.vblink777.club" method="get" target="_blank" rel="noopener">
-        <button class="button" type="submit">🎰 VBlink</button>
-      </form>
-      <form action="http://www.ultrapanda.mobi/" method="get" target="_blank" rel="noopener">
-        <button class="button" type="submit">🐼 UltraPanda</button>
-      </form>
-      <form action="https://bet777.eu/play/?" method="get" target="_blank" rel="noopener">
-        <button class="button" type="submit">💵 RiverSweeps</button>
-      </form>
-      <form action="https://m.gamesirius999.com" method="get" target="_blank" rel="noopener">
-        <button class="button" type="submit">🌠 Sirius</button>
-      </form>
-      <form action="http://www.cashmachine777.com" method="get" target="_blank" rel="noopener">
-        <button class="button" type="submit">💸 CashMachine</button>
-      </form>
+      <button class="button" onclick="openLink('gameVault')">🎮 GameVault</button>
+      <button class="button" onclick="openLink('vegasSweeps')">🎰 Vegas Sweeps</button>
+      <button class="button" onclick="openLink('highstakeSweeps')">💰 Highstake Sweeps</button>
+      <button class="button" onclick="openLink('juwa')">🔥 Juwa</button>
+      <button class="button" onclick="openLink('pandaMaster')">🐼 PandaMaster</button>
+      <button class="button" onclick="openLink('risingStar')">🌟 Rising Star</button>
+      <button class="button" onclick="openLink('fireKirin')">🐉 Fire Kirin</button>
+      <button class="button" onclick="openLink('orionStars')">🌌 OrionStars</button>
+      <button class="button" onclick="openLink('milkyWay')">🚀 MilkyWay</button>
+      <button class="button" onclick="openLink('vBlink')">🎰 VBlink</button>
+      <button class="button" onclick="openLink('ultraPanda')">🐼 UltraPanda</button>
+      <button class="button" onclick="openLink('riverSweeps')">💵 RiverSweeps</button>
+      <button class="button" onclick="openLink('sirius')">🌠 Sirius</button>
+      <button class="button" onclick="openLink('cashMachine')">💸 CashMachine</button>
     </section>
-
     <hr class="separator" aria-hidden="true" />
-
   </main>
 
-  <!-- Existing Help/Contact Manager Button -->
   <button class="contact-float" aria-haspopup="dialog" aria-expanded="false" aria-controls="contactModal" onclick="toggleContact()" type="button">
     💬 Help / Contact Manager
   </button>
 
-  <!-- Contact Agent Button -->
   <button class="contact-float" style="bottom: 90px; background-color: #2e8b57;" onclick="toggleAgent()">
     🧑‍💼 Contact Agent
   </button>
 
-  <!-- Manager Contact Modal -->
   <div class="contact-modal" id="contactModal">
     <div class="close-btn" onclick="toggleContact()">✖</div>
     <h3 style="margin-top: 0;">Contact Manager</h3>
-    <form id="contact-form" action="https://hook.us2.make.com/m24rktaef0x74rrd3hhpav2911nbymdo" method="POST">
+    <form id="contact-form">
       <input type="hidden" name="_captcha" value="false">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
@@ -452,187 +76,61 @@
     <p id="thank-you"></p>
   </div>
 
-  <!-- Contact Agent Modal -->
   <div class="contact-modal" id="agentModal">
     <div class="close-btn" onclick="toggleAgent()">✖</div>
     <h3 style="margin-top: 0;">Contact Agent</h3>
-    <form id="agent-form" action="https://formsubmit.co/ajax/whitetigerreal2@gmail.com" method="POST">
+    <form id="agent-form">
       <input type="hidden" name="_captcha" value="false">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="text" name="username" placeholder="Your Username" required>
       <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
       <button class="button" type="submit">📨 Send</button>
     </form>
-
     <p id="agent-thank-you"></p>
   </div>
 
-  <!-- Social Buttons -->
   <section class="action-buttons">
-    <a class="button" href="#" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+    <button class="button" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
       <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width: 20px; height: 20px;">
       Connect via Facebook (Coming Soon)
-    </a>
-
-<!--     <a class="button" href="https://wa.me/qr/6MJ6VUUILNUEM1" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 20px; height: 20px;">
-      Chat on WhatsApp
-    </a> -->
-
-    <a class="button" href="https://t.me/whitetiger320" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+    </button>
+    <button class="button" style="display: flex; align-items: center; justify-content: center; gap: 10px;" onclick="openLink('telegram')">
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" style="width: 20px; height: 20px;">
       Join us on Telegram
-    </a>
-
-    <a class="button" href="https://signal.me/#eu/oqr5iOWmaM_3sD_msDdkFsv50fRccpQSNrqpRfd1wU6YvjyIBHxN0ba6QG0TFBB9" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+    </button>
+    <button class="button" style="display: flex; align-items: center; justify-content: center; gap: 10px;" onclick="openLink('signalSocial')">
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Signal-Logo.svg" alt="Signal" style="width: 20px; height: 20px; border-radius: 4px;">
       Message via Signal
-    </a>
-
+    </button>
   </section>
+
   <section class="action-buttons" style="margin-top: 20px;">
-    <button onclick="toggleReport()" style="
-    background-color: transparent;
-    color: #aaa;
-    border: 1px solid #444;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;">
+    <button onclick="toggleReport()" style="background-color: transparent; color: #aaa; border: 1px solid #444; padding: 8px 16px; border-radius: 4px; font-size: 0.95rem; font-weight: 500; cursor: pointer; transition: all 0.2s ease;">
       Report This Page
     </button>
   </section>
 
-  <!-- Footer + Report Page -->
   <footer style="margin-top: 40px; padding: 20px; background: #111820; color: #aaa; text-align: center; font-size: 0.9rem;">
     <p>&copy; 2025 White Tiger Gaming. All rights reserved.</p>
   </footer>
 
-  <div class="contact-modal" id="reportModal" style="
-  background: #1a1a1a;
-  border: 1px solid #444;
-  box-shadow: none;
-  color: #ddd;
-  font-size: 0.95rem;
-">
+  <div class="contact-modal" id="reportModal" style="background: #1a1a1a; border: 1px solid #444; box-shadow: none; color: #ddd; font-size: 0.95rem;">
     <div class="close-btn" onclick="toggleReport()">✖</div>
     <h3 style="margin-top: 0; font-size: 1.2rem; color: #ccc; font-weight: 600;">Report this Page</h3>
-    <form id="report-form" action="https://formsubmit.co/ajax/whitetigergaming365@gmail.com" method="POST">
+    <form id="report-form">
       <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="legalname" placeholder="Legal Name" required style="
-      background-color: #2b2b2b;
-      color: #eee;
-      border: 1px solid #555;
-      font-size: 0.95rem;
-      border-radius: 4px;
-      padding: 10px;
-      margin-bottom: 12px;
-      width: 100%;
-    ">
-      <input type="text" name="phone" placeholder="Phone Number" required style="
-      background-color: #2b2b2b;
-      color: #eee;
-      border: 1px solid #555;
-      font-size: 0.95rem;
-      border-radius: 4px;
-      padding: 10px;
-      margin-bottom: 12px;
-      width: 100%;
-    ">
-      <input type="email" name="email" placeholder="Email Address" required style="
-      background-color: #2b2b2b;
-      color: #eee;
-      border: 1px solid #555;
-      font-size: 0.95rem;
-      border-radius: 4px;
-      padding: 10px;
-      margin-bottom: 12px;
-      width: 100%;
-    ">
-      <textarea name="reason" rows="3" placeholder="Reason for reporting" required style="
-      background-color: #2b2b2b;
-      color: #eee;
-      border: 1px solid #555;
-      font-size: 0.95rem;
-      border-radius: 4px;
-      padding: 10px;
-      margin-bottom: 14px;
-      width: 100%;
-      resize: vertical;
-    "></textarea>
-      <button type="submit" style="
-      background-color: #444;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-      width: 100%;
-    ">
+      <input type="text" name="legalname" placeholder="Legal Name" required style="background-color: #2b2b2b; color: #eee; border: 1px solid #555; font-size: 0.95rem; border-radius: 4px; padding: 10px; margin-bottom: 12px; width: 100%;">
+      <input type="text" name="phone" placeholder="Phone Number" required style="background-color: #2b2b2b; color: #eee; border: 1px solid #555; font-size: 0.95rem; border-radius: 4px; padding: 10px; margin-bottom: 12px; width: 100%;">
+      <input type="email" name="email" placeholder="Email Address" required style="background-color: #2b2b2b; color: #eee; border: 1px solid #555; font-size: 0.95rem; border-radius: 4px; padding: 10px; margin-bottom: 12px; width: 100%;">
+      <textarea name="reason" rows="3" placeholder="Reason for reporting" required style="background-color: #2b2b2b; color: #eee; border: 1px solid #555; font-size: 0.95rem; border-radius: 4px; padding: 10px; margin-bottom: 14px; width: 100%; resize: vertical;"></textarea>
+      <button type="submit" style="background-color: #444; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; font-size: 0.95rem; font-weight: 500; cursor: pointer; transition: background-color 0.2s ease; width: 100%;">
         Submit Report
       </button>
     </form>
     <p id="report-thank-you" style="display: none; margin-top: 14px;"></p>
   </div>
 
-  <script>
-    function toggleContact() {
-      const modal = document.getElementById("contactModal");
-      modal.style.display = modal.style.display === "block" ? "none" : "block";
-    }
-
-    function toggleFreeplay() {
-      const section = document.getElementById("freeplay-section");
-      section.style.display = section.style.display === "block" ? "none" : "block";
-    }
-
-    function toggleAgent() {
-      const modal = document.getElementById("agentModal");
-      modal.style.display = modal.style.display === "block" ? "none" : "block";
-    }
-
-    function toggleReport() {
-      const modal = document.getElementById("reportModal");
-      modal.style.display = modal.style.display === "block" ? "none" : "block";
-    }
-
-    function notifyLink(url) {
-      alert("🔗 Redirecting to: " + url);
-      window.open(url, '_blank');
-    }
-
-    function attachFormHandler(formId, msgId, successMsg) {
-      const form = document.getElementById(formId);
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const message = document.getElementById(msgId);
-        message.style.display = "none";
-        const formData = new FormData(form);
-        fetch(form.action, {
-          method: "POST",
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        }).then(response => {
-          message.style.display = "block";
-          message.textContent = response.ok ? successMsg : "❌ Failed to send message.";
-          form.reset();
-        }).catch(() => {
-          message.style.display = "block";
-          message.textContent = "❌ Network error. Please try again.";
-        });
-      });
-    }
-    attachFormHandler("contact-form", "thank-you", "✅ Message sent to Manager successfully.");
-    attachFormHandler("agent-form", "agent-thank-you", "✅ Message sent to Agent successfully.");
-    attachFormHandler("report-form", "report-thank-you", "Report Sent.");
-  </script>
+  <script src="script.js"></script>
+  <script src="links.js"></script>
 </body>
-
 </html>
