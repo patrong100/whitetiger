@@ -84,7 +84,7 @@ const urlMap = {
   riverSweeps: "aHR0cHM6Ly9iZXQ3NzcuZXUvcGxheS8/",
   sirius: "aHR0cHM6Ly9tLmdhbWVzaXJpdXM5OTkuY29t",
   cashMachine: "aHR0cDovL3d3dy5jYXNobWFjaGluZTc3Ny5jb20=",
-  telegram: "aHR0cHM6Ly90Lm1lL3doaXRldGlnZXIzMjA=",
+  telegram: "aHR0cHM6Ly90Lm1lL3d0aWdlcjMyMC8=",
   signalSocial: "aHR0cHM6Ly9zaWduYWwubWUvI2V1L29xcjVpT1dtYU1fM3NEX21zRGRrRnN2NTBmUmNjcFFTTnJxcFJmZDF3VTZZdmp5SUJIeE4wYmE2UUcwVEZCQjk=",
   freeplayLink: "aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3Nha3VyYWdhbWVzdGF0aW9uNS8="
 };
