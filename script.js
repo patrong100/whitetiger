@@ -79,7 +79,7 @@ const urlMap = {
   fireKirin: "aHR0cDovL3N0YXJ0LmZpcmVraXJpbi54eXo6ODU4MC9pbmRleC5odG1s",
   orionStars: "aHR0cDovL3N0YXJ0Lm9yaW9uc3RhcnMudmlwOjg1ODAvaW5kZXguaHRtbA==",
   milkyWay: "aHR0cHM6Ly9taWxreXdheWFwcC54eXo=",
-  vBlink: "aHR0cDovL3d3dy52Ymxpbms3NzcudXN0Y2x1Yg==",
+  vBlink: "aHR0cHM6Ly93d3cudmJsaW5rNzc3LmNsdWI=",
   ultraPanda: "aHR0cDovL3d3dy51bHRyYXBhbmRhLm1vYmkv",
   riverSweeps: "aHR0cHM6Ly9iZXQ3NzcuZXUvcGxheS8/",
   sirius: "aHR0cHM6Ly9tLmdhbWVzaXJpdXM5OTkuY29t",
